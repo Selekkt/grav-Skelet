@@ -1,0 +1,23 @@
+title: Portfolio
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.content_3:
+              type: editor
+              ordering@: 4
+              label: Editor 2
+            header.content_4:
+              type: editor
+              ordering@: 5
+              label: Editor 3
+            header.content_5:
+              type: editor
+              ordering@: 6
+              label: Editor 4

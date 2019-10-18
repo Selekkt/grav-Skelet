@@ -1,0 +1,49 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html class="no-js" lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<head>
+    {% block head %}
+        {% include 'partials/head.html.twig' %}
+    {% endblock %}
+</head>
+<body class="{{ page.header.body_classes }}">
+    <div id="app">
+
+        {% block header %}
+          {% include 'partials/header.html.twig' %}
+        {% endblock %}
+
+        <main class="stick-footer">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% block footer %}
+          {% include 'partials/footer.html.twig' %}
+        {% endblock %}
+
+    </div>
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-Y"></script><!-- change UA-XXXXXXXXX-Y with your own. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-Y'); // change UA-XXXXXXXXX-Y with your own.
+</script>
+<!-- End Google Analytics -->
+
+<script>
+[
+    "a Sēlekkt. Studio project",
+    "https://Selekkt.dk/"
+]
+</script>
+
+</body>
+</html>

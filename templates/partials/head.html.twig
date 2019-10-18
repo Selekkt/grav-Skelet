@@ -1,0 +1,28 @@
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta data-framework="Skēlet." data-ver="2.2.2" data-dev="Sēlekkt. Studio">
+
+	<title>{{ site.title|e('html') }}{% if page.header.seotitle %} &mdash; {{ page.header.seotitle|e('html') }}{% else %}{% if header.title %} &mdash; {{ header.title|e('html') }}{% endif %}{% endif %}</title>
+	{% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://assets/img/favicon.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url('theme://assets/img/touch.png') }}">
+
+<!-- CSS -->
+{% block stylesheets %}
+	{% do assets.addCss('theme://assets/css/skelet.css') %} <!-- include Skelet -->
+	{% do assets.addCss('theme://assets/css/app.css') %} <!-- Write all of your CSS styles here -->
+	{% do assets.addCss('https://fonts.googleapis.com/css?family=Raleway:400,300,600') %}
+	{% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') %}
+{% endblock %}
+{{ assets.css()|raw }}
+
+<!-- JavaScript -->
+{% block javascripts %}
+	{% do assets.addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js', {group: 'bottom'}) %}
+	{% do assets.addJs('theme://assets/js/modules.js', {group:'bottom'}) %} <!-- Get all your modules in 1 file -->
+	{% do assets.addJs('theme://assets/js/app.js', {group:'bottom'}) %} <!-- Write all of your JS here -->
+{% endblock %}
+{{ assets.js()|raw }}

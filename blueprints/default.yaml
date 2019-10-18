@@ -1,0 +1,16 @@
+title: Portfolio
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.seotitle:
+              type: text
+              ordering@: 2
+              label: SEO title
+              placeholder: Enter alternative title

@@ -1,0 +1,41 @@
+{# This page is used for single posts. e.g. Blog post page #}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  {% if page.header.featured_image is defined %}
+    {% set post_image = page.media.images[page.header.featured_image] %}
+  {% else %}
+    {% set post_image = page.media.images | first %}
+  {% endif %}
+
+  <h1>{{ page.title }}</h1>
+  <h4>{{ post.date | date('y-m-d') }}</h4>
+  {% if post_image %}
+    {{ post_image.html }}
+  {% else %}
+    <img src="https://source.unsplash.com/random/800x600?sig={{ random() }}">
+  {% endif %}
+  {{ page.content }} {# Editor 1 #}
+  {{ page.header.content_3|markdown }} {# Editor 2 #}
+  {{ page.header.content_4|markdown }} {# Editor 3 #}
+  {{ page.header.content_5|markdown }} {# Editor 4 #}
+
+        {% if not page.isFirst or not page.isLast %}
+          {% set prev_post_image = page.prevSibling.media.images | first %}
+          {% if not page.isLast %}
+            <a href="{{ page.prevSibling.url }}">
+              <img src="{{ prev_post_image.url }}" alt=" {{ page.prevSibling.header.title }}">
+              {{ page.prevSibling.header.title }}
+            </a>
+          {% endif %}
+
+          {% set next_post_image = page.nextSibling.media.images | first %}
+          {% if not page.isFirst %}
+            <a href="{{ page.nextSibling.url }}">
+              {{ next_post_image.html }}
+              {{ page.nextSibling.header.title }}
+            </a>
+        {% endif %}
+      {% endif %}
+
+{% endblock %}

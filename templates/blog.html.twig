@@ -1,0 +1,45 @@
+{# This page is used for listing all posts in 1 page. e.g. category page #}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <h1 class="introtit">{{ page.title }}</h1>
+    {{ page.content }}
+
+        {% for post in page.collection %}
+            {# This is a even/odd loop – https://gist.github.com/jpetitcolas/4481722 #}
+            {% if loop.index is divisibleby(2) %}
+                <div class="item even">
+            {% else %}
+                <div class="item odd">
+            {% endif %}
+
+            {# Getting the first image of post #}
+            {% if post.header.featured_image is defined %}
+                {% set post_image = post.media.images[post.header.featured_image] %}
+            {% else %}
+                {% set post_image = post.media.images | first %}
+            {% endif %}
+
+    <a href='{{ post.url }}'>
+        <h2>{{ post.title }} </h2>
+        <h5>{{ post.date | date('y-m-d') }}</h5>
+    </a>
+
+    <a href="{{ post.url }}">
+        {% if post_image %}
+            {{ post_image.html }}
+        {% else %}
+            <img src="https://source.unsplash.com/random/800x600?sig={{ random() }}">
+        {% endif %}
+    </a>
+
+    {{ post.summary }}
+    </div>
+    {% endfor %}
+    </div>
+    
+    {# If pagination is enabled #}
+    {% if config.plugins.pagination.enabled and collection.params.pagination %}
+        {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+    {% endif %}
+{% endblock %}
