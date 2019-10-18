@@ -1,7 +1,7 @@
 <h1 align='center'>Skēlet.</h1>
 
 <p align='center'>
-A blank and minimal theme for [Grav CMS](https://github.com/getgrav/grav). No dependencies, improved directory structure, optimized build process and freedom to create. It's basically [Skēlet.](https://selekkt.dk/git/skelet) for Grav.
+A blank and minimal theme for <a href='http://github.com/getgrav/grav'>Grav CMS</a>. No dependencies, improved directory structure, optimized build process and freedom to create. It's basically <a href='https://selekkt.dk/git/skelet'>Skēlet.</a> for Grav.
 </p>
 
 ### Installation
@@ -17,6 +17,7 @@ If you want to rename your new theme with something more personal. You need to e
 		- selekkt.jpg
 		- skelet.yaml
 		- skelet.php
+	
 	+ Edit files:
 		- blueprints.yaml
 		- skelet.php
