@@ -13,6 +13,7 @@ Log in to admin panel go to `Themes > Add` search for Skēlet. and click `Instal
 
 ### Change Theme Name
 If you want to rename your new theme with something more personal. You need to edit the following:
+	
 	+ Rename Files:
 		- selekkt.jpg
 		- skelet.yaml
