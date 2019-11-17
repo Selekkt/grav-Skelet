@@ -1,0 +1,8 @@
+{# This is the default Modular page #}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	{% for module in page.collection() %}
+		{{ module.content|raw }}
+    {% endfor %}
+{% endblock %}
