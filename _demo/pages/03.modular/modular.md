@@ -1,0 +1,4 @@
+---
+content:
+    items: @self.modular
+---
