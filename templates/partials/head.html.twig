@@ -21,7 +21,7 @@
 
 <!-- JavaScript -->
 {% block javascripts %}
-	{% do assets.addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js', {group: 'bottom'}) %}
+	{% do assets.addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', {group: 'bottom'}) %}
 	{% do assets.addJs('theme://assets/js/modules.js', {group:'bottom'}) %} <!-- Get all your modules in 1 file -->
 	{% do assets.addJs('theme://assets/js/app.js', {group:'bottom'}) %} <!-- Write all of your JS here -->
 {% endblock %}
