@@ -37,7 +37,7 @@ If you want to rename your new theme with something more personal. You need to e
 	+ Edit files:
 		- blueprints.yaml
 		- skelet.php
+<hr>
 
 #### skelet.css documnetations
 Visit the [Skelet. docs](https://selekkt.dk/skelet/v3/) to find out how easy you can build your website.
-<hr>
