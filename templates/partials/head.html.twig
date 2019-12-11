@@ -1,8 +1,8 @@
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta data-framework="Skēlet." data-ver="2.5.0" data-dev="Sēlekkt. Studio">
+	<meta data-framework="Skelet." data-ver="3.0.0" data-dev="Sēlekkt. Studio">
 
 	<title>{{ site.title|e('html') }}{% if page.header.seotitle %} &mdash; {{ page.header.seotitle|e('html') }}{% else %}{% if header.title %} &mdash; {{ header.title|e('html') }}{% endif %}{% endif %}</title>
 	{% include 'partials/metadata.html.twig' %}
@@ -12,10 +12,10 @@
 
 <!-- CSS -->
 {% block stylesheets %}
-	{% do assets.addCss('theme://assets/css/skelet.css') %} <!-- include Skelet -->
+	{% do assets.addCss('theme://assets/css/skelet.css') %} <!-- include Skelet. -->
 	{% do assets.addCss('theme://assets/css/app.css') %} <!-- Write all of your CSS styles here -->
-	{% do assets.addCss('https://fonts.googleapis.com/css?family=Raleway:400,300,600') %}
-	{% do assets.addCss('https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css') %}
+	{% do assets.addCss('https://rsms.me/inter/inter.css') %}
+	{% do assets.addCss('https://cdn.jsdelivr.net/npm/line-awesome@1.3.0/dist/line-awesome/css/line-awesome.min.css') %}
 {% endblock %}
 {{ assets.css()|raw }}
 
