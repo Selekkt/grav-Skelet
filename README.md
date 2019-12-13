@@ -6,10 +6,15 @@ A blank and minimal theme for <a href='http://github.com/getgrav/grav'>Grav CMS<
 
 ### Installation
 
-#### [Grav Admin Plugin](https://github.com/getgrav/grav-plugin-admin)
+#### Install via [Grav Admin Plugin](https://github.com/getgrav/grav-plugin-admin)
 
-Log in to admin panel go to `Themes > Add` search for Skelet. and click `Install`. After that, `Activate` the theme.
-> Using this method you will have to manually copy files from `user/themes/skelet/_demo/pages` to `user/pages`
+1. [Download Skelet.](https://github.com/Selekkt/grav-Skelet/archive/master.zip)
+2. Login to your Admin Panel 
+3. Go to `Themes > Add` search for Skelet. (master.zip) and click `Install` and `Activate` the theme.
+
+
+	By using this method you will have to manually copy the files from `user/themes/skelet/_demo/pages` to `user/pages`
+
 
 ### Change Theme Name
 If you want to rename your new theme with something more personal. You need to edit the following:
