@@ -1,6 +1,6 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
-<html class="no-js" lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
     {% block head %}
         {% include 'partials/head.html.twig' %}
@@ -28,22 +28,15 @@
 {% endblock %}
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-Y"></script><!-- change UA-XXXXXXXXX-Y with your own. -->
+<!-- change all G-XXXXXXXXX with your ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-XXXXXXXXX-Y'); // change UA-XXXXXXXXX-Y with your own.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXX'); // change G-XXXXXXXXX with your ID
 </script>
 <!-- End Google Analytics -->
-
-<script>
-[
-    "a Sēlekkt. Studio project",
-    "https://Selekkt.dk/"
-]
-</script>
 
 </body>
 </html>

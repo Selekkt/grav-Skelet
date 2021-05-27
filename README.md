@@ -10,10 +10,14 @@ A blank and minimal theme for <a href='http://github.com/getgrav/grav'>Grav CMS<
 
 1. [Download Skelet.](https://github.com/Selekkt/grav-Skelet/archive/master.zip)
 2. Login to your Admin Panel 
-3. Go to `Themes > Add` search for Skelet. (master.zip) and click `Install` and `Activate` the theme.
+3. Go to `Tools > Direct install` select `master.zip` and click `Upload and install` 
+4. Go to `Themes` and `Activate` Skelet.
 
 
 	By using this method you will have to manually copy the files from `user/themes/skelet/_demo/pages` to `user/pages`
+
+#### Configs
+1. Go to `Configurations` under `Twig templating` switch `Autoescape variables` to `No` 
 
 
 ### Change Theme Name

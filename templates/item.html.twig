@@ -8,29 +8,29 @@
     {% set post_image = page.media.images | first %}
   {% endif %}
 
-  <h1>{{ page.title }}</h1>
+  <h1>{{ page.title|raw }}</h1>
   <h4>{{ post.date | date('y-m-d') }}</h4>
   {% if post_image %}
-    {{ post_image.html }}
+    {{ post_image.html|raw }}
   {% else %}
     <img src="https://source.unsplash.com/random/800x600?sig={{ random() }}">
   {% endif %}
-  {{ page.content }}
+  {{ page.content|raw }}
 
         {% if not page.isFirst or not page.isLast %}
           {% set prev_post_image = page.prevSibling.media.images | first %}
           {% if not page.isLast %}
-            <a href="{{ page.prevSibling.url }}">
-              <img src="{{ prev_post_image.url }}" alt=" {{ page.prevSibling.header.title }}">
-              {{ page.prevSibling.header.title }}
+            <a href="{{ page.prevSibling.url|raw }}">
+              <img src="{{ prev_post_image.url }}" alt=" {{ page.prevSibling.header.title|raw }}">
+              {{ page.prevSibling.header.title|raw }}
             </a>
           {% endif %}
 
           {% set next_post_image = page.nextSibling.media.images | first %}
           {% if not page.isFirst %}
-            <a href="{{ page.nextSibling.url }}">
-              {{ next_post_image.html }}
-              {{ page.nextSibling.header.title }}
+            <a href="{{ page.nextSibling.url|raw }}">
+              {{ next_post_image.html|raw }}
+              {{ page.nextSibling.header.title|raw }}
             </a>
         {% endif %}
       {% endif %}

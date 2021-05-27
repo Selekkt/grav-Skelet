@@ -1,8 +1,9 @@
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
-	<meta data-framework="Skelet." data-ver="3.1.2" data-dev="Sēlekkt. Studio">
+	<meta name="Skelet." property="Sēlekkt. Studio" content="https://selekkt.dk/skelet/v3/">
 
 	<title>{{ site.title|e('html') }}{% if page.header.seotitle %} &mdash; {{ page.header.seotitle|e('html') }}{% else %}{% if header.title %} &mdash; {{ header.title|e('html') }}{% endif %}{% endif %}</title>
 	{% include 'partials/metadata.html.twig' %}
@@ -12,16 +13,16 @@
 
 <!-- CSS -->
 {% block stylesheets %}
-	{% do assets.addCss('theme://assets/css/skelet.css') %} <!-- include Skelet. -->
-	{% do assets.addCss('theme://assets/css/app.css') %} <!-- Write all of your CSS styles here -->
 	{% do assets.addCss('https://rsms.me/inter/inter.css') %}
 	{% do assets.addCss('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css') %} <!-- browse the icons: https://fontawesome.com/icons?d=listing&m=free -->
+	{% do assets.addCss('theme://assets/css/skelet.css') %} <!-- include Skelet. -->
+	{% do assets.addCss('theme://assets/css/app.css') %} <!-- Write all of your CSS styles here -->
 {% endblock %}
 {{ assets.css()|raw }}
 
 <!-- JavaScript -->
 {% block javascripts %}
-	{% do assets.addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', {group: 'bottom'}) %}
+	{% do assets.addJs('', {group: 'bottom'}) %}
 	{% do assets.addJs('theme://assets/js/modules.js', {group:'bottom'}) %} <!-- Get all your modules in 1 file -->
 	{% do assets.addJs('theme://assets/js/app.js', {group:'bottom'}) %} <!-- Write all of your JS here -->
 {% endblock %}

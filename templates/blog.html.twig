@@ -2,8 +2,8 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    <h1 class="introtit">{{ page.title }}</h1>
-    {{ page.content }}
+    <h1 class="introtit">{{ page.title|raw }}</h1>
+    {{ page.content|raw }}
 
         {% for post in page.collection %}
             {# This is a even/odd loop – https://gist.github.com/jpetitcolas/4481722 #}
@@ -20,20 +20,20 @@
                 {% set post_image = post.media.images | first %}
             {% endif %}
 
-    <a href='{{ post.url }}'>
-        <h2>{{ post.title }} </h2>
+    <a href="{{ post.url|raw }}">
+        <h2>{{ post.title|raw }} </h2>
         <h5>{{ post.date | date('y-m-d') }}</h5>
     </a>
 
-    <a href="{{ post.url }}">
+    <a href="{{ post.url|raw }}">
         {% if post_image %}
-            {{ post_image.html }}
+            {{ post_image.html|raw }}
         {% else %}
             <img src="https://source.unsplash.com/random/800x600?sig={{ random() }}">
         {% endif %}
     </a>
 
-    {{ post.summary }}
+    {{ post.summary|raw }}
     </div>
     {% endfor %}
     </div>

@@ -2,6 +2,6 @@
 
 {% block content %}
   <h1>{{ 'ERROR'|t }}
-    {{ page.header.http_response_code }}</h1>
-  {{ page.content }}
+    {{ page.header.http_response_code|raw }}</h1>
+  {{ page.content|raw }}
 {% endblock %}
