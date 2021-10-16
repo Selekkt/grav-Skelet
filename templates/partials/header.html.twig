@@ -1,23 +1,23 @@
-    <header class="header">
-        <div class="logo">
-            <a href="{{ home_url }}">
-            {% if logo %}
-              {% set logo_file = (logo|first).name %}
-                <img src="{{ url('theme://assets/img/logo/' ~ logo_file)  }}" alt="{{ site.name }}" />
-            {% else %}
-                <h1>{{ config.site.title }}</h1>
-            {% endif %}
-            </a>
-        </div>
+<header class="header">
+    <div class="logo">
+        <a href="{{ home_url }}">
+        {% if logo %}
+            {% set logo_file = (logo|first).name %}
+            <img src="{{ url('theme://assets/img/logo/' ~ logo_file)  }}" alt="{{ site.name }}" />
+        {% else %}
+            <h1>{{ config.site.title }}</h1>
+        {% endif %}
+        </a>
+    </div>
 
-        <nav class="nav" role="navigation">
-            <ul class="inline">
-            {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild)? 'is-active': '' %}
-                <li class="{{ current_page }}">
-                    <a href="{{ page.url }}"><span>{{ page.menu }}</span></a>
-                </li>
-            {% endfor %}
-            </ul>
-        </nav>
-    </header>
+    <nav class="nav">
+        <ul class="inline">
+        {% for page in pages.children.visible %}
+        {% set current_page = (page.active or page.activeChild)? 'is-active': '' %}
+            <li class="{{ current_page }}">
+                <a href="{{ page.url }}"><span>{{ page.menu }}</span></a>
+            </li>
+        {% endfor %}
+        </ul>
+    </nav>
+</header>
